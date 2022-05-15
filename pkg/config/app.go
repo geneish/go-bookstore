@@ -2,7 +2,6 @@ package config
 
 import (
 	"gorm.io/driver/sqlite"
-	_ "gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
 
