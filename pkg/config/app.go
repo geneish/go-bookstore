@@ -1,8 +1,9 @@
 package config
 
 import (
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"gorm.io/driver/sqlite"
+	_ "gorm.io/driver/sqlite"
+	"gorm.io/gorm"
 )
 
 var (
@@ -11,7 +12,7 @@ var (
 )
 
 func Connect(){
-	d, err := gorm.Open("mysql", "moancy:bababa@12@/simplerest?charset=utf8&parseTime=True&loc=Local")
+	db, err := gorm.Open(sqlite.Open("gorm.db"), &gorm.Config{})
 	if err != nil{
 		panic(err)
 	}
